@@ -16,6 +16,10 @@
 // Variables
 Ball bouncing;
 Paddle paddling;
+float paddleY;
+float paddleX;
+float ballX;
+float ballY;
 
 
 //Screen size, background image/color, ect...
@@ -33,3 +37,7 @@ void draw(){
   paddling.move();
   bouncing.move();
 }
+
+//void collisionSite(){
+  
+//}

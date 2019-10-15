@@ -9,7 +9,7 @@ class Ball {
   float xpos = 250;
   float ypos = 450;
   float ballRad = 20;
-  float speed = 1.5;
+  float speed = 2.5;
 
   //the ball itself, starting at the declared variables above
   void display() {
@@ -17,16 +17,19 @@ class Ball {
     ellipse(xpos, ypos, ballRad, ballRad);
   }
 
-// the movement bit here keeps the ball in constant and consistant motion
+  // the movement bit here keeps the ball in constant and consistant motion
   void move() {
     ypos = ypos + speed;
 
-    if (ypos > height - ballRad) {
+    if (xpos <= mouseX +50 && xpos >= mouseX-50 && ypos == 800 - ballRad) {
+      speed = speed *-1;
+      ypos = 800;
+    } else if (ypos > height - ballRad) {
       speed = speed * -1;
       ypos = height- ballRad;
-    }
-    if (ypos < ballRad){
+    } else if (ypos < ballRad) {
       speed = speed * -1;
+      ypos = ballRad;
     }
   }
 }
